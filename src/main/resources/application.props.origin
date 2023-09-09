@@ -1,0 +1,19 @@
+# DataSource Config
+spring.datasource.driver-class-name=
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+# Hibernate config
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+# Show what exactly SQL code hibernate generate
+spring.jpa.properties.hibernate.show_sql=true
+
+# For other HTTP methods (PUT PATCH ...)
+spring.mvc.hiddenmethod.filter.enabled=true
+
+
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.file-size-threshold=2KB
+spring.servlet.multipart.max-file-size=200MB
+spring.servlet.multipart.max-request-size=215MB
