@@ -4,7 +4,7 @@ Link on JAR https://www.dropbox.com/scl/fi/7x3h7bp1vdn9qgd8i1gtx/cs_air-0.0.1-SN
 
 
 For start using:
-In /BOOT-INF/classes//application.properties set your db info
+In /BOOT-INF/classes/application.properties set your db info
 After that
 java -jar cs_air-0.0.1-SNAPSHOT.jar
 
