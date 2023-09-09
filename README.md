@@ -7,3 +7,5 @@ For start using:
 In /BOOT-INF/classes//application.properties set your db info
 After that
 java -jar cs_air-0.0.1-SNAPSHOT.jar
+
+P.S. For DDl queries check https://github.com/vega2475/cs_air/blob/master/src/ddl-info.sql
