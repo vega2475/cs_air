@@ -3,6 +3,7 @@ package com.cs.air.services;
 import com.cs.air.models.Item;
 import com.cs.air.models.Person;
 import com.cs.air.repositories.ItemRepository;
+import com.cs.air.repositories.PeopleRepository;
 import com.cs.air.util.exception.ItemNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,12 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class ItemsService {
     private final ItemRepository itemRepository;
+    private final PeopleRepository peopleRepository;
 
     @Autowired
-    public ItemsService(ItemRepository itemRepository) {
+    public ItemsService(ItemRepository itemRepository, PeopleRepository peopleRepository) {
         this.itemRepository = itemRepository;
+        this.peopleRepository = peopleRepository;
     }
 
     public List<Item> findAllItems(){

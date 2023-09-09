@@ -2,6 +2,7 @@ package com.cs.air.services;
 
 import com.cs.air.models.Item;
 import com.cs.air.models.Person;
+import com.cs.air.repositories.ItemRepository;
 import com.cs.air.repositories.PeopleRepository;
 import com.cs.air.util.exception.PersonNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,12 @@ import java.util.Optional;
 @Component
 public class PersonService {
     private final PeopleRepository peopleRepository;
+    private final ItemRepository itemRepository;
 
     @Autowired
-    public PersonService(PeopleRepository peopleRepository) {
+    public PersonService(PeopleRepository peopleRepository, ItemRepository itemRepository) {
         this.peopleRepository = peopleRepository;
+        this.itemRepository = itemRepository;
     }
 
     public List<Person> findAllPeople(){
@@ -41,6 +44,6 @@ public class PersonService {
     }
 
     public List<Item> findItems(Person person){
-        return person.getItems();
+        return itemRepository.findItemsByOwner(person);
     }
 }

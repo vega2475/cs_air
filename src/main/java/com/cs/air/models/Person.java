@@ -3,6 +3,7 @@ package com.cs.air.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import org.hibernate.annotations.Cascade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class Person {
     private String password;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Item> items;
 
     public void addItem(Item item){

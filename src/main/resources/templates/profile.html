@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <!-- Подключите ваши стили CSS здесь -->
+    <link rel="stylesheet" href="/styles/profile.css">
+</head>
+<body>
+<header>
+    <h1>User Profile</h1>
+    <p>Welcome, <span th:text="${#authentication.name}"></span>!</p>
+</header>
+
+<main>
+    <section class="items">
+        <h2>Your Items:</h2>
+        <div th:each="item : ${itemList}" class="item">
+            <p class="item-name" th:text="${item.name}"></p>
+            <p class="item-rarity" th:text="${item.rarity}"></p>
+        </div>
+    </section>
+</main>
+
+<!-- Добавьте другие элементы страницы и стили по желанию -->
+</body>
+</html>
